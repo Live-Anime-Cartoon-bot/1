@@ -1,0 +1,30 @@
+# ── Telegram / Pyrogram ───────────────────────────────────────────────────────
+pyrogram==2.0.106
+tgcrypto                        # required for pyrogram MTProto encryption
+
+# ── HTTP / Networking ─────────────────────────────────────────────────────────
+aiohttp                         # async HTTP (pyrogram internals + direct use)
+requests                        # sync HTTP (JioTV API, license URL fetches)
+curl_cffi                       # TLS-fingerprint curl (OTT unblocking)
+brotli                          # brotli decompression for aiohttp / requests
+httpx                           # fallback async HTTP client
+
+# ── Video / Media ─────────────────────────────────────────────────────────────
+yt-dlp==2026.7.4                # OTT download engine (pin: frequently breaking)
+hachoir                         # media metadata (duration, codec info)
+
+# ── Cryptography ──────────────────────────────────────────────────────────────
+pycryptodome                    # AES-128 / ClearKey DRM decryption + JioTV creds encryption
+
+# ── System / Utils ────────────────────────────────────────────────────────────
+psutil                          # CPU / memory / process monitoring
+pytz                            # timezone handling
+python-dotenv                   # .env file loading
+
+# ── Web Automation (stream extraction from web pages via /reclink) ────────────
+playwright==1.49.1              # Chromium automation (pin: avoids browser-abi drift)
+
+# ── Google Drive Upload ───────────────────────────────────────────────────────
+google-api-python-client==2.165.0   # Drive / Sheets API
+google-auth==2.40.3                 # OAuth2 credentials
+google-auth-httplib2                # HTTP transport for google-auth
