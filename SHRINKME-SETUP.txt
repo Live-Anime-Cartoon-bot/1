@@ -1,0 +1,22 @@
+JUGNU TV optional ShrinkMe share link
+=====================================
+
+The home page now creates a ShrinkMe link only when someone taps "Share JUGNU TV".
+The link points to the site's own homepage. Playback remains ungated, and the
+site does not automatically redirect visitors to ShrinkMe.
+
+Server setup
+------------
+1. In your hosting file manager, copy api/shorten-config.example.php to
+   api/shorten-config.php.
+2. Edit api/shorten-config.php on the server and replace the placeholder with
+   your ShrinkMe API key.
+3. Do not put the API key in JavaScript, send it in chat, or publish the real
+   config file in a public repository. api/.htaccess blocks web access to it.
+4. Upload the updated files from this ZIP to the same web root as index.html.
+   Keep the API key only in the server-side shorten-config.php file.
+
+The shortener endpoint uses PHP cURL, which is already required by the existing
+stream endpoint. If the key is not configured, the share dialog reports that
+server setup is needed; it does not block playback. Link generation is limited
+to one request per IP every 20 seconds to reduce accidental API usage.
